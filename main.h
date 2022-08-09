@@ -9,7 +9,7 @@
 #include <sys/wait.h>
 
 char **tokenize(char *text, const char *delim, int *count);
-
+void print_envmnt(void);
 
 
 
