@@ -9,7 +9,7 @@
  * Return: 0 on success.
  */
 
-int main(int ac, char *av[])
+int main(int argc __attribute__((unused)), char **argv __attribute__((unused)))
 {
 	/*Initialize*/
 	char *lineptr = NULL;
