@@ -58,6 +58,7 @@ int main(int ac, char *av[])
 	}
 
 	free(lineptr);
+
 	return (0);
 }
 
