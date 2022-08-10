@@ -1,37 +1,39 @@
+#include "main.h"
+
+
 /**
- * tokenize - splits a string and returns an array of each
- * token/word of the string
+ * tokenize - tokenizes a buffer with a delimiter
+ * @buffer: string buffer to tokenize
+ * @delimiter: delimiter to be used for tokenization
  *
- * @lineptr: pointer to the buf
- *
- * Return:  array of strings/tokens. Free allocated memory after use
+ * Return: pointer to an array of pointers to the tokens
  */
-
-
-char **tokenize(char *lineptr)
+char **tokenize(char *buffer, char *delimiter)
 {
-	char *delimiter = " '\t''\n'";
-	int bufsize =  TOK_BUFSIZE, position = 0;
-	char **tokens = malloc(sizeof(char *) * bufsize);
-	char *token;
+	char **tokens = NULL;
+	size_t i = 0, mcount = 10;
 
-	if (!tokens)
+	if (buffer == NULL)
+		return (NULL);
+	tokens = malloc(sizeof(char *) * mcount);
+	if (tokens == NULL)
 	{
-		perror("Allocation Error: \n");
-		exit(EXIT_FAILURE);
+		perror("Error (Fatal)");
+		return (NULL);
 	}
-
-	token = strtok(lineptr, delimiter);
-	while (token)
+	while ((tokens[i] = _strtok(buffer, delimiter)) != NULL)
 	{
-		tokens[position] = strdup(token);
-
-		token = strtok(NULL, delimiter);
-
-		position++;
+		i++;
+		if (i == mcount)
+		{
+			tokens = _realloc(tokens, &mcount);
+			if (tokens == NULL)
+			{
+				perror("Error (Fatal)");
+				return (NULL);
+			}
+		}
+		buffer = NULL;
 	}
-
-	tokens[position] = token;
-
 	return (tokens);
 }
