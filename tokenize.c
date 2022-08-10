@@ -1,6 +1,12 @@
-#include <unistd.h>
-#include <stdlib.h>
-#define TOK_BUFSIZE 64
+/**
+ * tokenize - splits a string and returns an array of each
+ * token/word of the string
+ *
+ * @lineptr: pointer to the buf
+ *
+ * Return:  array of strings/tokens. Free allocated memory after use
+ */
+
 
 char **tokenize(char *lineptr)
 {

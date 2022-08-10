@@ -16,5 +16,5 @@ void print_envmnt(void)
 		write(STDOUT_FILENO, "\n", 1);
 		x++;
 	}
-	return = 0;
+	return (0);
 }

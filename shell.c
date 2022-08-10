@@ -2,7 +2,12 @@
 #include <stdio.h>
 
 /**
- * 
+ * main - entry to main
+ *
+ * @ac: argument counter
+ * @av: argument array
+ *
+ * Return: 0
  */
 
 int main(int ac __attribute__((unused)), char **av __attribute__((unused)))
