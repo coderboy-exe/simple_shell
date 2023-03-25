@@ -1,3 +1,3 @@
 # C - Simple Shell
 ---
-Simple Shell README will be updated as the project gets optimized
+This project is a simple unix-like shell application built in C. 
